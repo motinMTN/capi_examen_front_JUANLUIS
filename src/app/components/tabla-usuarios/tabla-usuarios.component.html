@@ -1,0 +1,38 @@
+<div class="card mt-4">
+  <div class="card-header text-center">
+    <h1>Lista de Usuarios</h1>
+  </div>
+  <div class="card-body">
+    <!-- <h1>Lista de Usuarios</h1> -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Fecha nacimiento</th>
+          <th>Edad</th>
+          <th>Direcciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.fecha_nacimiento}}</td>
+          <td>{{ageCalculator(user.fecha_nacimiento)}}</td>
+          <td>
+            <ul *ngFor="let domicilio of user.domicilios" style="list-style-type: none">
+              ** {{domicilio.domicilio}},
+              / {{domicilio.numero_exterior}},
+              {{domicilio.colonia}},
+              {{domicilio.cp}},
+              {{domicilio.ciudad}}.
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
