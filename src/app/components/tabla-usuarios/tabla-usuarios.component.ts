@@ -20,13 +20,4 @@ export class TablaUsuariosComponent implements OnInit {
     })
   }
 
-  ageCalculator(edad:any){
-    if(edad){
-      const convertAge = new Date(edad);
-      const timeDiff = Math.abs(Date.now() - convertAge.getTime());
-      edad = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
-      return edad;
-    }
-  }
-
 }
